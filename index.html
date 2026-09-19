@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Yanda Dahli — Selamat Wisuda</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at top, #203b48 0%, #101d25 45%, #071016 100%);
+    color: #f5f1e8;
+    overflow-x: hidden;
+}
+
+.stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    opacity: .4;
+    animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: .15;
+        transform: scale(1);
+    }
+    50% {
+        opacity: .8;
+        transform: scale(1.5);
+    }
+}
+
+.page {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 35px 18px;
+}
+
+.page.active {
+    display: flex;
+    animation: pageIn .8s ease;
+}
+
+@keyframes pageIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 760px;
+    padding: 40px 30px;
+    text-align: center;
+    background: rgba(255,255,255,.065);
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.decor {
+    font-size: 48px;
+    margin-bottom: 18px;
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0%,100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.small {
+    color: #d6bd6a;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 18px;
+}
+
+h1 {
+    color: #ead68e;
+    font-size: clamp(38px, 9vw, 62px);
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #ead68e;
+    font-size: clamp(27px, 6vw, 42px);
+    margin-bottom: 25px;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.85;
+    color: #eeeeee;
+}
+
+button {
+    margin-top: 30px;
+    padding: 13px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #d6bd6a;
+    color: #172027;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(214,189,106,.2);
+    transition: .3s;
+}
+
+button:hover {
+    transform: scale(1.06);
+    background: #ead68e;
+}
+
+button:active {
+    transform: scale(.96);
+}
+
+.end {
+    font-size: 21px;
+    line-height: 1.9;
+    color: #ead68e;
+}
+
+@media (max-width: 500px) {
+    .page {
+        align-items: flex-start;
+        padding: 25px 14px;
+    }
+
+    .card {
+        margin-top: 10px;
+        padding: 32px 20px;
+        border-radius: 20px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .small {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    button {
+        padding: 12px 30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars">
+    <span class="star" style="left:8%;top:15%;"></span>
+    <span class="star" style="left:25%;top:30%;animation-delay:1s;"></span>
+    <span class="star" style="left:80%;top:18%;animation-delay:2s;"></span>
+    <span class="star" style="left:70%;top:70%;animation-delay:.5s;"></span>
+    <span class="star" style="left:15%;top:82%;animation-delay:1.5s;"></span>
+    <span class="star" style="left:90%;top:50%;animation-delay:2.5s;"></span>
+</div>
+
+
+<!-- HALAMAN 1 -->
+
+<section class="page active" id="page1">
+
+    <div class="card">
+
+        <div class="decor">🎓</div>
+
+        <div class="small">
+            SEBUAH UCAPAN KECIL
+        </div>
+
+        <h1>
+            Untuk Yanda Dahli
+        </h1>
+
+        <p>
+            Ada sedikit ucapan yang ingin aku sampaikan
+            untuk seseorang yang telah menyelesaikan
+            salah satu perjalanan penting dalam hidupnya.
+            <br><br>
+
+            Luangkan sedikit waktu untuk membacanya.
+        </p>
+
+        <button onclick="nextPage(2)">
+            OPEN
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HALAMAN 2 -->
+
+<section class="page" id="page2">
+
+    <div class="card">
+
+        <div class="decor">🎓✨</div>
+
+        <div class="small">
+            SELAMAT ATAS PENCAPAIANNYA
+        </div>
+
+        <h2>
+            Assalamu'alaikum
+        </h2>
+
+        <p>
+
+            Selamat atas kelulusan dan pencapaian
+            gelar sarjana, Yanda Dahli.
+            <br><br>
+
+            Alhamdulillah, setelah melewati berbagai
+            proses, tugas, kesibukan, dan perjuangan,
+            akhirnya salah satu tahap penting dalam
+            perjalanan pendidikan Yanda telah berhasil
+            diselesaikan.
+            <br><br>
+
+            Aku ikut senang melihat Yanda bisa sampai
+            di tahap ini. Semoga gelar yang telah
+            diperoleh bukan hanya menjadi sebuah
+            pencapaian, tetapi juga menjadi bekal untuk
+            melangkah ke perjalanan berikutnya.
+            <br><br>
+
+            Semoga ilmu yang telah diperoleh selama
+            masa perkuliahan dapat menjadi ilmu yang
+            bermanfaat, baik untuk diri sendiri maupun
+            untuk orang-orang di sekitar.
+            <br><br>
+
+            Semoga pencapaian ini menjadi awal dari
+            banyak kesempatan, pengalaman, dan
+            keberhasilan lainnya di masa depan.
+            <br><br>
+
+            Semoga setiap langkah Yanda setelah ini
+            selalu dimudahkan, diberikan kesehatan,
+            kelancaran dalam menjalankan aktivitas,
+            serta keberkahan dalam setiap usaha
+            yang dilakukan.
+            <br><br>
+
+            Apa pun perjalanan yang akan Yanda jalani
+            setelah ini, semoga selalu diberikan
+            kekuatan untuk melewatinya dengan baik.
+            <br><br>
+
+            Sekali lagi, selamat atas gelar sarjananya,
+            Yanda Dahli.
+            <br><br>
+
+            Semoga keberhasilan ini menjadi salah satu
+            awal dari banyak hal baik yang akan datang.
+
+        </p>
+
+        <button onclick="nextPage(3)">
+            NEXT
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HALAMAN 3 -->
+
+<section class="page" id="page3">
+
+    <div class="card">
+
+        <div class="decor">🙏</div>
+
+        <div class="small">
+            UCAPAN TERIMA KASIH
+        </div>
+
+        <h2>
+            Terima Kasih, Yanda Dahli
+        </h2>
+
+        <p>
+
+            Selain mengucapkan selamat,
+            aku juga ingin mengucapkan
+            terima kasih sebesar-besarnya
+            kepada Yanda.
+            <br><br>
+
+            Terima kasih karena sudah sabar
+            dalam melatih, membimbing,
+            dan mendampingi aku selama ini.
+            <br><br>
+
+            Terima kasih sudah melatih aku
+            dalam kegiatan kakarlatohan,
+            fisik, renang, ju jitsu,
+            serta berbagai latihan lainnya.
+            <br><br>
+
+            Terima kasih untuk setiap arahan,
+            teguran, motivasi, dan ilmu
+            yang telah Yanda berikan.
+            <br><br>
+
+            Mungkin tidak semua proses latihan
+            terasa mudah, tetapi dari setiap
+            latihan tersebut aku belajar banyak
+            hal tentang disiplin, keberanian,
+            ketahanan, tanggung jawab,
+            kerja sama, dan pentingnya
+            untuk tidak mudah menyerah.
+            <br><br>
+
+            Terima kasih karena sudah meluangkan
+            waktu dan tenaga untuk membimbing aku.
+            <br><br>
+
+            Terima kasih juga karena sudah tetap
+            sabar menghadapi aku, mengingatkan
+            ketika aku melakukan kesalahan,
+            serta memberikan arahan agar aku
+            bisa menjadi lebih baik.
+            <br><br>
+
+            Terima kasih atas semua pengalaman
+            yang sudah diberikan. Banyak hal yang
+            mungkin terlihat sederhana saat ini,
+            tetapi nantinya akan menjadi pengalaman
+            yang berharga untuk aku ingat.
+            <br><br>
+
+            Terima kasih karena bukan hanya melatih
+            fisik, tetapi juga mengajarkan bagaimana
+            untuk tetap disiplin, bertanggung jawab,
+            dan kuat ketika menghadapi kesulitan.
+            <br><br>
+
+            Aku sangat menghargai waktu, tenaga,
+            kesabaran, dan ilmu yang sudah Yanda
+            berikan selama ini.
+            <br><br>
+
+            Semoga semua kebaikan, ilmu,
+            dan waktu yang Yanda berikan kepada aku
+            menjadi amal yang terus mengalir.
+            <br><br>
+
+            Semoga Yanda selalu diberikan kesehatan,
+            kesuksesan, kemudahan, dan keberkahan
+            dalam setiap langkah berikutnya.
+            <br><br>
+
+            Sekali lagi, terima kasih banyak
+            untuk semuanya, Yanda Dahli.
+
+        </p>
+
+        <button onclick="nextPage(4)">
+            END
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- HALAMAN 4 -->
+
+<section class="page" id="page4">
+
+    <div class="card">
+
+        <div class="decor">🤍</div>
+
+        <div class="small">
+            SEBUAH UCAPAN PENUTUP
+        </div>
+
+        <p class="end">
+
+            Sekali lagi,
+            <br><br>
+
+            Selamat atas pencapaian
+            gelar sarjananya,
+            Yanda Dahli.
+            <br><br>
+
+            Terima kasih atas semua ilmu,
+            waktu, kesabaran, bimbingan,
+            dan pengalaman yang telah diberikan.
+            <br><br>
+
+            Semoga selalu diberikan kesehatan,
+            kesuksesan, kelancaran,
+            dan keberkahan dalam setiap
+            langkah ke depannya.
+            <br><br>
+
+            Semoga segala kebaikan
+            yang telah diberikan
+            mendapatkan balasan terbaik.
+            <br><br>
+
+            <strong>
+                Wassalamu'alaikum
+                <br>
+                Warahmatullahi Wabarakatuh
+            </strong>
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function nextPage(number) {
+
+    const pages = document.querySelectorAll(".page");
+
+    pages.forEach(function(page) {
+        page.classList.remove("active");
+    });
+
+    const next = document.getElementById("page" + number);
+
+    next.classList.add("active");
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
